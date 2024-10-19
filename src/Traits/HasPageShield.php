@@ -61,7 +61,7 @@ trait HasPageShield
         return static::canAccess() && parent::shouldRegisterNavigation();
     }
 
-    public static function canAccess(): bool
+    public static function canAccess(array $parameters = []): bool
     {
         return Filament::auth()->user()->can(static::getPermissionName());
     }
